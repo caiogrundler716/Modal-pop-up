@@ -14,7 +14,7 @@
 			<img class="logo" src="lescone.png" alt="Le Scone" />
 			<div class="intro-info">
 				<p>De Seg. à Sab.<span class="aberto"></span><br>das 07:00h às 18:00h</p>
-				<p>Praia de Botafogo, 300<br>Queluz - SP</p>
+				<p>Rua Conselheiro Rodrigues Alves, 300<br>Queluz - SP</p>
 			</div>
 			<p class="intro-telefone">+55 021 2412-3333</p>
 		</div>
@@ -85,7 +85,7 @@
 		<div class="container">
 			<p class="grid-9">Le Scone © 1989 - 2018. </p>
 			<a class="grid-3"  target="_blank">
-				<img src="lescone-icone (1).png" alt="Le Scone Icone" />
+				<img src="lescone-icone.png" alt="Le Scone Icone" />
 			</a>
 		</div>
 	</footer>
@@ -163,29 +163,15 @@
 
 	<script>
 	
-		function iniciaModal(modalID) {
-			if(localStorage.fechaModal !== modalID) {
-				const modal = document.getElementById(modalID);
-				if(modal) {
-					modal.classList.add('mostrar');
-					modal.addEventListener('click', (e) => {
-						if(e.target.id == modalID || e.target.className == 'fechar') {
-							modal.classList.remove('mostrar');
-							localStorage.fechaModal = modalID;
-						}
-					});
-				}
-			}
+		
+		function iniciaModal(modalId){
+
+			const modal = document.getElementById(modalId)
+
+			console.log(modal)
 		}
 
-		const logo = document.querySelector('.contato .button');
-		logo.addEventListener('click', () => iniciaModal('modal-promocao'));
-
-		document.addEventListener('scroll', () => {
-			if(window.pageYOffset > 800) {
-				iniciaModal('modal-promocao')
-			}
-		})
+		iniciaModal('modal-promocao');
 
 	</script>
 
